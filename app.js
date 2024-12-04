@@ -1,22 +1,22 @@
-import mongoose from "mongoose";
-import express from "express";
+import mongoose from "moongose";
+import express from "expres";
 import cors from "cors";
-import dotenv from "dotenv";
-import { test } from "./backend/controllers/alumnos.controllers.js";
+import dotenv from "dontenv";
+import { test } from "./backend/controllers/Carro.controllers.js";
 
 dotenv.config();
 mongoose
   .connect(process.env.url_db)
-  .then(() => {
+  .then(() {
     console.log("funciona la base de datos");
   })
   .catch((error) => {
-    console.log("No funciona ya salio", error);
+    console.log("No funciona ya salio");
   });
 
 const app = express();
 app.use(cors());
-app.listen(4000, () => {
+app.listen(400, () => {
   console.log("se escucha el servidor");
 });
 test();
